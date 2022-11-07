@@ -4,6 +4,11 @@ import java.util.Random;
 
 public class Matrix {
 
+    /**
+     * Generate a matrix of size n with random integers within n.
+     * @param n integer for the size of the matrix to be generated
+     * @return matrix of size of n
+     */
     public int[][]GenerateMatrix(int n)
     {
         Random rand = new Random();
@@ -15,10 +20,16 @@ public class Matrix {
                 Matrix[i][j] = rand.nextInt(n);
             }
         }
-
         return Matrix;
     }
 
+    /**
+     * Gets a partition of a larger matrix
+     * @param InputMatrix
+     * @param m index of row
+     * @param n index of column
+     * @return partitioned matrix based on the index of row and column
+     */
     public int[][]GetPartitionMatrix(int[][]InputMatrix, int m, int n)
     {
         int[][]Matrix = new int[m][n];
@@ -32,6 +43,10 @@ public class Matrix {
         return Matrix;
     }
 
+    /**
+     * Prints the matrix on the terminal
+     * @param a input matrix a
+     */
     public static void printMatrix(int [][]a)
     {
         System.out.println("Printing Matrix:");
@@ -45,6 +60,13 @@ public class Matrix {
         }
     }
 
+    /**
+     *
+     * @param n size of matrix
+     * @param a input matrix a
+     * @param b input matrix b
+     * @return matrix multiplication of a and b
+     */
     public int[][] classicMultiply(int n, int a[][], int b[][]) {
         int c[][] = new int[n][n];
 
@@ -59,6 +81,17 @@ public class Matrix {
         return c;
     }
 
+    /**
+     *
+     * @param a input matrix a
+     * @param b input matrix b
+     * @param rA index of row of matrix a
+     * @param cA index of col of matrix a
+     * @param rB index of row of matrix b
+     * @param cB index of col of matrix b
+     * @param n size of matrix
+     * @return
+     */
     public int[][] DCmultiply(int a[][], int b[][], int rA, int cA, int rB, int cB, int n) {
         int c[][] = new int[n][n];
         if (n == 1) {
@@ -76,6 +109,14 @@ public class Matrix {
         return c;
     }
 
+    /**
+     *
+     * @param a output matrix a
+     * @param b input matrix b
+     * @param c input matrix c
+     * @param rC index of row to start
+     * @param cC index of column to start
+     */
     public static void add(int a[][], int b[][], int c[][], int rC, int cC) {
         int size = b.length;
         for (int i = 0; i < size; i++) {
@@ -85,6 +126,12 @@ public class Matrix {
         }
     }
 
+    /**
+     *
+     * @param a input matrix a
+     * @param b input matrix b
+     * @return output matrix = a+b
+     */
     public static int[][] addS(int[][] a, int[][] b) {
         int n = a.length;
         int[][] c = new int[n][n];
@@ -97,12 +144,26 @@ public class Matrix {
         return c;
     }
 
+    /**
+     *
+     * @param m matrix
+     * @param c subdivided matrix
+     * @param r index of the row
+     * @param s index of the column
+     */
     public static void split(int m[][], int c[][] , int r, int s) {
         for (int iC = 0, iM = r; iC < c.length; iC++, iM++)
             for (int jC = 0, jM = s; jC < c.length; jC++, jM++)
                 c[iC][jC] = m[iM][jM];
     }
-    // Subtract matrix
+
+
+    /**
+     * Subtract matrix
+     * @param a Input matrix a
+     * @param b Input matrix b
+     * @return a-b
+     */
     public static int[][] subtract(int[][] a, int[][] b) {
         int n = a.length;
         int[][] c = new int[n][n];
@@ -115,7 +176,15 @@ public class Matrix {
         return c;
     }
 
-    // Strassen Algorithm
+
+
+    /**
+     * Strassen Algorithm
+     * @param n size of matrix
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @return Multiplication of A and B
+     */
     public int[][] strassen(int n, int A[][], int B[][]) {
         n = A.length;
         int[][] c = new int[n][n];
@@ -171,6 +240,13 @@ public class Matrix {
         return c;
     }
 
+    /**
+     * Adds the submatrices to the large output matrix
+     * @param c Input matrix
+     * @param m Output matrix
+     * @param r index of the row
+     * @param s index of the column
+     */
     public static void join(int c [][] , int m[][], int r, int s) {
         for (int iC = 0, iM = r; iC < c.length; iC++, iM++)
             for (int j1 = 0, j2 = s; j1 < c.length; j1++, j2++)
