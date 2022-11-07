@@ -25,7 +25,7 @@ public class Matrix {
 
     /**
      * Gets a partition of a larger matrix
-     * @param InputMatrix
+     * @param InputMatrix 2D Input matrix
      * @param m index of row
      * @param n index of column
      * @return partitioned matrix based on the index of row and column
@@ -61,7 +61,7 @@ public class Matrix {
     }
 
     /**
-     *
+     * Brute force algorithm
      * @param n size of matrix
      * @param a input matrix a
      * @param b input matrix b
@@ -82,7 +82,7 @@ public class Matrix {
     }
 
     /**
-     *
+     * Divide and Conquer Algorithm
      * @param a input matrix a
      * @param b input matrix b
      * @param rA index of row of matrix a
@@ -90,7 +90,7 @@ public class Matrix {
      * @param rB index of row of matrix b
      * @param cB index of col of matrix b
      * @param n size of matrix
-     * @return
+     * @return  Multiplication of A and B
      */
     public int[][] DCmultiply(int a[][], int b[][], int rA, int cA, int rB, int cB, int n) {
         int c[][] = new int[n][n];
@@ -110,7 +110,7 @@ public class Matrix {
     }
 
     /**
-     *
+     * Adds two matrices
      * @param a output matrix a
      * @param b input matrix b
      * @param c input matrix c
@@ -127,7 +127,7 @@ public class Matrix {
     }
 
     /**
-     *
+     * Adds two matrices for strassen algorithm
      * @param a input matrix a
      * @param b input matrix b
      * @return output matrix = a+b
@@ -145,7 +145,7 @@ public class Matrix {
     }
 
     /**
-     *
+     * Sbudivides a matrix
      * @param m matrix
      * @param c subdivided matrix
      * @param r index of the row
