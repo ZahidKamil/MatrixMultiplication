@@ -180,7 +180,7 @@ public class Matrix {
 
     /**
      * Strassen Algorithm
-     * @param n size of matrix
+     * @param n size of matrix square
      * @param A Input matrix A
      * @param B Input matrix B
      * @return Multiplication of A and B
