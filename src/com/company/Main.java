@@ -12,16 +12,14 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         Matrix matrix = new Matrix();
-        int LargeN = 512;
+        int LargeN = 1024;
         int[][] LargeMatrix = matrix.GenerateMatrix(LargeN);
-        // first create file object for file placed at location
-        // specified by filepath
+
         String filePath = "Z:\\Cal Poly Pomona\\courses\\Fall 2022\\CS3310-DesignAnalysisAlgorithms\\Projects\\Project1\\Java\\strassen.csv";
         File file = new File(filePath);
         try {
-            FileWriter outputfile = new FileWriter(file);
-            // create CSVWriter object filewriter object as parameter
-            CSVWriter writer = new CSVWriter(outputfile);
+            FileWriter outputFile = new FileWriter(file);
+            CSVWriter writer = new CSVWriter(outputFile);
 
             int i = 2;
             List<String[]> data = new ArrayList<String[]>();
@@ -48,7 +46,6 @@ public class Main {
                 }
             }
             writer.writeAll(data);
-            // closing writer connection
             writer.close();
 
         } catch (IOException e) {

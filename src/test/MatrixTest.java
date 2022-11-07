@@ -94,6 +94,13 @@ public class MatrixTest {
         int C[][] = matrix.classicMultiply(2,arr1,arr2);
         int [][]CTrue = {{7,10},{15,22}};
         Arrays.equals(C,CTrue);
+        int [][]A = {{2,0,-1,6},{3,7,8,0},{-5,1,6,-2},{8,0,1,7}};
+        int [][]B = {{0,1,6,3},{-2,8,7,1},{2,0,-1,0},{9,1,6,-2}};
+        int [][]OutputTrue = {{52,8,49,-6},{2,59,59,16},{-8,1,-41,-10},{65,15,89,10}};
+        System.out.println("Printing output of the brute force algorithm");
+        int [][]Output = matrix.classicMultiply(4,A,B);
+        matrix.printMatrix(Output);
+        Arrays.equals(Output, OutputTrue);
     }
 
     @Test
@@ -105,6 +112,13 @@ public class MatrixTest {
         int C[][] = matrix.DCmultiply(arr1,arr2,0,0,0,0,2);
         int [][]CTrue = {{7,10},{15,22}};
         Arrays.equals(C,CTrue);
+        int [][]A = {{2,0,-1,6},{3,7,8,0},{-5,1,6,-2},{8,0,1,7}};
+        int [][]B = {{0,1,6,3},{-2,8,7,1},{2,0,-1,0},{9,1,6,-2}};
+        int [][]OutputTrue = {{52,8,49,-6},{2,59,59,16},{-8,1,-41,-10},{65,15,89,10}};
+        System.out.println("Printing output of the brute force algorithm");
+        int [][]Output = matrix.DCmultiply(A,B,0,0,0,0,4);
+        matrix.printMatrix(Output);
+        Arrays.equals(Output, OutputTrue);
     }
 
     @Test
@@ -116,5 +130,12 @@ public class MatrixTest {
         int C[][] = matrix.strassen(2,arr1,arr2);
         int [][]CTrue = {{7,10},{15,22}};
         Arrays.equals(C,CTrue);
+        int [][]A = {{2,0,-1,6},{3,7,8,0},{-5,1,6,-2},{8,0,1,7}};
+        int [][]B = {{0,1,6,3},{-2,8,7,1},{2,0,-1,0},{9,1,6,-2}};
+        int [][]OutputTrue = {{52,8,49,-6},{2,59,59,16},{-8,1,-41,-10},{65,15,89,10}};
+        System.out.println("Printing output of the brute force algorithm");
+        int [][]Output = matrix.strassen(4,A,B);
+        matrix.printMatrix(Output);
+        Arrays.equals(Output, OutputTrue);
     }
 }
